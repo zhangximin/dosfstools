@@ -1,0 +1,14 @@
+./configure --prefix=/usr/local/dosfstools --without-udev --without-iconv --host=arm-unknown-linux-uclibcgnueabi CC=/opt/rt9x5/arm-linux-uclibcgnueabi/usr/bin/arm-unknown-linux-uclibcgnueabi-gcc
+
+
+====================
+Unescaped left brace in regex is illegal here in regex; marked by <-- HERE in m/\${ <-- HERE ([^ \t=:+{}]+)}/ at /opt/rt9x5/arm-linux-uclibcgnueabi/usr/bin/automake line 4113.
+
+vi /opt/rt9x5/arm-linux-uclibcgnueabi/usr/bin/automake
+
+line 4113: 
+
+from : $text =~ s/\${([^ \t=:+{}]+)}/&substitute_ac_subst_variables_worker ($1)/ge;
+to : $text =~ s/\$[{]([^ \t=:+{}]+)}/substitute_ac_subst_variables_worker ($1)/ge;
+
+autoreconf -i -f
