@@ -12,3 +12,6 @@ from : $text =~ s/\${([^ \t=:+{}]+)}/&substitute_ac_subst_variables_worker ($1)/
 to : $text =~ s/\$[{]([^ \t=:+{}]+)}/substitute_ac_subst_variables_worker ($1)/ge;
 
 autoreconf -i -f
+
+====================
+Then go back to configure and build.
